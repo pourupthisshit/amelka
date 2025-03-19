@@ -103,3 +103,36 @@ button:hover {
 .cat-paw {
     position: absolute;
     width: 50px;
+    height: 50px;
+    background-image: url('paw.png');
+    background-size: cover;
+    animation: movePaw 5s linear infinite;
+    z-index: 1;
+}
+
+@keyframes movePaw {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(calc(100vw - 50px), calc(100vh - 50px)) rotate(360deg);
+    }
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
