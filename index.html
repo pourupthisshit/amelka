@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Czarny ekran startowy -->
+    <div id="startScreen">
+        <div class="start-text">HEJ NUDZIŁEM SIĘ SPK!</div>
+        <button id="startButton">GOTOWA NA NIESPODZIANKĘ?</button>
+    </div>
+
+    <!-- Główna zawartość strony -->
+    <div class="container" id="mainContent" style="display: none;">
         <div class="neon-text">WYBIERZ MĄDRZE</div>
         <div class="buttons">
             <button id="meowBtn">MEOW</button>
@@ -15,10 +22,13 @@
         </div>
         <div id="imageContainer"></div>
     </div>
+
+    <!-- Muzyka w tle -->
     <audio id="backgroundMusic" loop>
         <source src="MEOWMEOW.mp3" type="audio/mpeg">
         Twoja przeglądarka nie obsługuje elementu audio.
     </audio>
+
     <script src="script.js"></script>
 </body>
 </html>
