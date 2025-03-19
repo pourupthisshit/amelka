@@ -1,3 +1,46 @@
+/* Czarny ekran startowy */
+#startScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Na wierzchu wszystkiego */
+    transition: opacity 2s ease-in-out; /* Animacja zanikania */
+}
+
+.start-text {
+    font-size: 3em;
+    color: white;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 10px;
+    background-color: #00ffff; /* Neonowy baby blue */
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+#startButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Reszta stylów (bez zmian) */
 body {
     margin: 0;
     padding: 0;
@@ -5,7 +48,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffccf9; /* Pastelowy róż */
+    background-color: #ffccf9;
     font-family: 'Pacifico', cursive;
     overflow: hidden;
     position: relative;
@@ -18,12 +61,12 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     animation: fadeIn 2s ease-in-out;
-    z-index: 2; /* Kontener na wierzchu łapek */
+    z-index: 2;
 }
 
 .neon-text {
     font-size: 2.5em;
-    color: #00ffff; /* Baby blue neon */
+    color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
     animation: neonGlow 1.5s infinite alternate;
     margin-bottom: 20px;
@@ -42,7 +85,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #ff99cc; /* Pastelowy róż */
+    background-color: #ff99cc;
     color: white;
 }
 
@@ -56,41 +99,7 @@ button:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Animacje */
-@keyframes neonGlow {
-    from {
-        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-    }
-    to {
-        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* Kocie łapki w tle */
 .cat-paw {
     position: absolute;
-    width: 50px; /* Dostosuj rozmiar do obrazka */
-    height: 50px;
-    background-image: url('paw.png'); /* Łapka z pliku PNG */
-    background-size: cover;
-    animation: movePaw 5s linear infinite;
-    z-index: 1; /* Łapki pod kontenerem */
-}
-
-@keyframes movePaw {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    100% {
-        transform: translate(calc(100vw - 50px), calc(100vh - 50px)) rotate(360deg);
-    }
-}
+    width: 50px;
