@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffccf9; /* Pastelowy róż */
+    font-family: 'Pacifico', cursive;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+    z-index: 2; /* Kontener na wierzchu łapek */
+}
+
+.neon-text {
+    font-size: 2.5em;
+    color: #00ffff; /* Baby blue neon */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    animation: neonGlow 1.5s infinite alternate;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ff99cc; /* Pastelowy róż */
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#imageContainer {
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animacje */
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Kocie łapki w tle */
+.cat-paw {
+    position: absolute;
+    width: 50px; /* Dostosuj rozmiar do obrazka */
+    height: 50px;
+    background-image: url('paw.png'); /* Łapka z pliku PNG */
+    background-size: cover;
+    animation: movePaw 5s linear infinite;
+    z-index: 1; /* Łapki pod kontenerem */
+}
+
+@keyframes movePaw {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(calc(100vw - 50px), calc(100vh - 50px)) rotate(360deg);
+    }
+}
