@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.getElementById('mainContent');
     const backgroundMusic = document.getElementById('backgroundMusic');
 
-    // Ustaw głośność muzyki na 50% i odtwórz
-    backgroundMusic.volume = 0.5;
-    backgroundMusic.play();
-
     // Obsługa przycisku startowego
     startButton.addEventListener('click', function() {
+        // Odtwórz muzykę po kliknięciu przycisku
+        backgroundMusic.volume = 0.5;
+        backgroundMusic.play();
+
         // Zanikanie czarnego ekranu
         startScreen.style.opacity = '0';
         setTimeout(() => {
